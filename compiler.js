@@ -48,7 +48,7 @@ var compile = function (musexpr) {
     return compileT(musexpr, 0);
 };
 
-
+// original
 /*var melody_mus = 
     { tag: 'seq',
       left: 
@@ -61,6 +61,7 @@ var compile = function (musexpr) {
          right: { tag: 'note', pitch: 'd4', dur: 500 } } };
 */
 
+/*  /// simple repeat 
 var melody_mus = 
     { tag: 'seq',
       left: 
@@ -68,6 +69,17 @@ var melody_mus =
       right:
       { tag: 'repeat',
       section: { tag: 'note', pitch: 'c4', dur: 250 },
+      count: 3 } };
+*/
+var melody_mus = 
+    { tag: 'seq',
+      left: 
+      { tag: 'rest', dur: 250 },
+      right:
+      { tag: 'repeat',
+      section: { tag: 'seq',
+      left: { tag: 'note', pitch: 'c4', dur: 500 },
+      right: { tag: 'note', pitch: 'd4', dur: 500 } },
       count: 3 } };
 
 console.log(melody_mus);
